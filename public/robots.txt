@@ -1,0 +1,30 @@
+# Robots.txt for Natural Cannabis Oil Shop
+# https://naturalcannabisoil.shop
+
+User-agent: *
+Allow: /
+
+# Disallow admin and internal pages
+Disallow: /admin-orders
+Disallow: /api/
+Disallow: /checkout
+Disallow: /cart
+
+# Disallow search results to avoid duplicate content
+Disallow: /search?*
+
+# Allow crawlers to access static assets
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.css$
+Allow: /*.js$
+
+# Crawl delay to be respectful
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://naturalcannabisoil.shop/sitemap.xml
