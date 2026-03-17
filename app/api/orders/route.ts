@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { sendCustomerOrderConfirmation, sendSellerOrderNotification } from "@/lib/email/resend-service"
+import { sendCustomerEmail, sendSellerEmail, type OrderEmailData } from "@/lib/email/resend-service"
 
 export const dynamic = "force-dynamic"
 
@@ -65,7 +65,7 @@ export async function POST(request: Request) {
 
     // Send emails to customer and seller
     try {
-      const emailData = {
+      const emailData: OrderEmailData = {
         orderId: order.id,
         customerName: `${order.customer_first_name} ${order.customer_last_name}`,
         customerEmail: order.customer_email,
@@ -86,14 +86,20 @@ export async function POST(request: Request) {
       }
 
       // Send confirmation to customer
-      await sendCustomerOrderConfirmation(emailData)
+      const customerEmailResult = await sendCustomerEmail(emailData)
+      if (!customerEmailResult.success) {
+        console.warn("[Orders API] Customer email failed:", customerEmailResult.error)
+      }
 
-      // Send notification to seller (if email is configured)
-      const sellerEmail = process.env.SELLER_EMAIL || "orders@naturalcannabisoil.shop"
-      await sendSellerOrderNotification(emailData, sellerEmail)
+      // Send notification to seller
+      const sellerEmail = process.env.SELLER_EMAIL || "admin@naturalcannabisoil.shop"
+      const sellerEmailResult = await sendSellerEmail(emailData, sellerEmail)
+      if (!sellerEmailResult.success) {
+        console.warn("[Orders API] Seller email failed:", sellerEmailResult.error)
+      }
     } catch (emailError) {
       // Log email error but don't fail the order
-      console.error("Failed to send notification emails:", emailError)
+      console.error("[Orders API] Email service exception:", emailError)
     }
 
     return NextResponse.json(order)
