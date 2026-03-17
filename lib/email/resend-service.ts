@@ -1,7 +1,20 @@
 import { Resend } from "resend"
 
-// Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend with API key (lazy initialization to avoid build errors)
+let resend: Resend | null = null
+
+function getResendClient(): Resend {
+  if (!resend) {
+    const apiKey = process.env.RESEND_API_KEY
+    if (!apiKey) {
+      throw new Error(
+        'RESEND_API_KEY environment variable is not set. Please add it to your Vercel environment variables.'
+      )
+    }
+    resend = new Resend(apiKey)
+  }
+  return resend
+}
 
 export interface OrderEmailData {
   orderId: string
@@ -211,7 +224,8 @@ export async function sendCustomerOrderConfirmation(data: OrderEmailData) {
       return { success: false, error: "Email service not configured" }
     }
 
-    const response = await resend.emails.send({
+    const client = getResendClient()
+    const response = await client.emails.send({
       from: "orders@naturalcannabisoil.shop",
       to: data.customerEmail,
       subject: `Order Confirmation - Order #${data.orderId}`,
@@ -236,7 +250,10 @@ export async function sendSellerOrderNotification(data: OrderEmailData, sellerEm
       return { success: false, error: "Email service not configured" }
     }
 
-    const response = await resend.emails.send({
+    const client = getResendClient()
+    }
+
+    const response = await client.emails.send({
       from: "orders@naturalcannabisoil.shop",
       to: sellerEmail,
       subject: `New Order Received - #${data.orderId}`,
