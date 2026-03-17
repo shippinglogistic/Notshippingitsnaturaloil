@@ -19,27 +19,38 @@ interface ChatWidgetsProps {
 export function ChatWidgets({ whatsappNumber, chatraId }: ChatWidgetsProps) {
   const [showWhatsAppTooltip, setShowWhatsAppTooltip] = useState(false)
 
-  // Load Chatra widget
+  // Load Chatra widget - Fixed for production
   useEffect(() => {
     if (chatraId) {
-      // Set the ChatraID BEFORE loading the script
-      ;(window as any).ChatraID = chatraId
-      
-      // Check if Chatra script is already loaded
-      if (!(window as any).Chatra) {
-        const script = document.createElement("script")
-        script.async = true
-        script.src = `https://app.chatra.io/chatra.js`
-        script.onload = () => {
-          // Chatra script loaded successfully
-          if ((window as any).Chatra && (window as any).Chatra.onReady) {
-            ;(window as any).Chatra.onReady(() => {
-              // Ready callback
-            })
+      // Use a small delay to ensure DOM is ready
+      const timer = setTimeout(() => {
+        // Set the ChatraID BEFORE loading the script
+        ;(window as any).ChatraID = chatraId
+        
+        // Check if Chatra script is already loaded
+        if (!(window as any).Chatra) {
+          const script = document.createElement("script")
+          script.async = true
+          script.src = "https://app.chatra.io/chatra.js"
+          script.charset = "UTF-8"
+          script.setAttribute("data-embed-version", "4")
+          
+          script.onload = () => {
+            // Force Chatra to reinitialize
+            if ((window as any).Chatra) {
+              ;(window as any).Chatra.updateInterfaceState?.()
+            }
           }
+          
+          script.onerror = () => {
+            console.error("Failed to load Chatra widget")
+          }
+          
+          document.body.appendChild(script)
         }
-        document.head.appendChild(script)
-      }
+      }, 100)
+      
+      return () => clearTimeout(timer)
     }
   }, [chatraId])
 

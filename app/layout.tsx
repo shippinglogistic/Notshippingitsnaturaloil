@@ -121,7 +121,7 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-    generator: 'v0.app'
+  generator: "Natural Cannabis Oil Website",
 }
 
 const websiteSchema = {
