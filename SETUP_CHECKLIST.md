@@ -18,6 +18,13 @@
 - [x] Widget ID configured: `i3kTzjNeW8UX`
 - [x] Client-side only (no SSR issues)
 
+### WhatsApp Widget
+- [x] Created `/components/WhatsAppWidget.tsx` - WhatsApp integration
+- [x] Number configured: 9194632493
+- [x] Bottom-left positioning
+- [x] Mobile responsive
+- [x] Click-to-message on WhatsApp
+
 ### Environment Variables
 - [x] Created `.env.example` - Template for all required vars
 - [x] Ready for you to add keys
@@ -115,6 +122,7 @@ To change the widget ID:
 ✅ **Automatic Customer Emails** - Confirmation with order details
 ✅ **Seller Notifications** - Alert when new order received
 ✅ **Chat Widget** - ChatWay live chat on every page
+✅ **WhatsApp Widget** - Direct WhatsApp messaging (bottom-left)
 ✅ **Error Handling** - Graceful failures, doesn't break orders
 ✅ **Production-Ready** - No syntax errors, build-safe
 
@@ -165,8 +173,10 @@ Before going live:
 - [ ] Placed test order
 - [ ] Received customer confirmation email
 - [ ] Received seller alert email
-- [ ] ChatWay widget appears
+- [ ] ChatWay widget appears (top right)
 - [ ] Chat widget opens and responds
+- [ ] WhatsApp widget appears (bottom left)
+- [ ] WhatsApp opens correct conversation
 - [ ] Custom domain configured (if applicable)
 
 ---

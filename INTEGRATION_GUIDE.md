@@ -101,9 +101,9 @@ if (sellerResult.success) {
 
 ---
 
-## 💬 Tawk.to Chat Widget
+## 💬 ChatWay Chat Widget
 
-### File: `/components/TawkWidget.tsx`
+### File: `/components/ChatWayWidget.tsx`
 
 **Features:**
 - Client-side only (`"use client"`)
@@ -116,22 +116,22 @@ if (sellerResult.success) {
 **How It Works:**
 1. Component renders as `null` (invisible)
 2. useEffect runs only on client-side
-3. Creates and appends Tawk script to body
-4. Tawk widget appears on all pages
+3. Creates and appends ChatWay script to body
+4. ChatWay widget appears on all pages
 5. Script unloaded on component unmount (cleanup)
 
 ### Usage in Layout
 
 ```typescript
-import TawkWidget from "@/components/TawkWidget"
+import ChatWayWidget from "@/components/ChatWayWidget"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
       <body>
         {children}
-        {/* Tawk.to widget loads globally */}
-        <TawkWidget />
+        {/* ChatWay widget loads globally */}
+        <ChatWayWidget />
       </body>
     </html>
   )
@@ -140,13 +140,60 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 ### Current Configuration
 
-- **Embed ID**: `693f60bd7bdcd2197d981cc4/1jcfp3pac`
-- **URL**: `https://embed.tawk.to/693f60bd7bdcd2197d981cc4/1jcfp3pac`
+- **Widget ID**: `i3kTzjNeW8UX`
+- **URL**: `https://cdn.chatway.app/widget.js?id=i3kTzjNeW8UX`
 
-To change the Tawk ID:
-1. Go to Tawk.to dashboard
+To change the ChatWay ID:
+1. Go to ChatWay dashboard
 2. Create/copy your widget ID
-3. Update the `script.src` in `components/TawkWidget.tsx`
+3. Update the widget ID in `components/ChatWayWidget.tsx`
+
+## 📱 WhatsApp Widget
+
+### File: `/components/WhatsAppWidget.tsx`
+
+**Features:**
+- Client-side only (`"use client"`)
+- Green WhatsApp button in bottom-left corner
+- Direct messaging link
+- Mobile responsive
+- Opens WhatsApp app on mobile, web on desktop
+- No API key needed
+
+**How It Works:**
+1. Component renders WhatsApp button
+2. Button positioned at bottom-left with fixed positioning
+3. Clicking opens WhatsApp conversation with preset message
+4. Uses wa.me service (WhatsApp official)
+
+### Usage in Layout
+
+```typescript
+import WhatsAppWidget from "@/components/WhatsAppWidget"
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html>
+      <body>
+        {children}
+        {/* WhatsApp widget loads globally */}
+        <WhatsAppWidget />
+      </body>
+    </html>
+  )
+}
+```
+
+### Current Configuration
+
+- **Phone Number**: `9194632493`
+- **Message**: "Hi, I have a question about your products."
+- **Position**: Bottom-left corner, fixed
+
+To change the WhatsApp number:
+1. Edit `components/WhatsAppWidget.tsx`
+2. Update the `phoneNumber` variable
+3. Redeploy
 
 ---
 
