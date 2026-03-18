@@ -5,7 +5,20 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['naturalcannabisoil.shop', 'www.naturalcannabisoil.shop'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'naturalcannabisoil.shop',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.naturalcannabisoil.shop',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.blob.vercel-storage.com',
+      },
+    ],
     unoptimized: true,
   },
   async headers() {
@@ -35,7 +48,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://call.chatra.io https://app.chatra.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://call.chatra.io https://app.chatra.io wss://chatra.io; frame-src 'self'; media-src 'self';",
+            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.chatway.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://cdn.chatway.app wss://chatway.app; frame-src 'self'; media-src 'self';",
           },
         ],
       },

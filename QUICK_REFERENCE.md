@@ -1,4 +1,4 @@
-# ⚡ Quick Reference - Resend + Tawk Integration
+# ⚡ Quick Reference - Resend + ChatWay Integration
 
 ## TL;DR - 3 Steps to Production
 
@@ -37,9 +37,9 @@ Vercel Dashboard
 | File | What Changed | Why |
 |------|--------------|-----|
 | `lib/email/resend-service.ts` | NEW FILE | Email service |
-| `components/TawkWidget.tsx` | NEW FILE | Chat widget |
+| `components/ChatWayWidget.tsx` | NEW FILE | Chat widget |
 | `app/api/orders/route.ts` | Updated imports & calls | Uses new email functions |
-| `app/layout.tsx` | Updated import & JSX | Uses TawkWidget instead of ChatWidgets |
+| `app/layout.tsx` | Updated import & JSX | Uses ChatWayWidget instead of ChatWidgets |
 | `package.json` | No changes | Resend already added |
 
 ---
@@ -57,14 +57,14 @@ await sendSellerEmail(emailData, "admin@yoursite.com")
 
 ### Using Chat Widget (in layout)
 ```typescript
-import TawkWidget from "@/components/TawkWidget"
+import ChatWayWidget from "@/components/ChatWayWidget"
 
 export default function RootLayout({ children }) {
   return (
     <html>
       <body>
         {children}
-        <TawkWidget />  {/* That's it! */}
+        <ChatWayWidget />  {/* That's it! */}
       </body>
     </html>
   )
@@ -84,7 +84,7 @@ export default function RootLayout({ children }) {
 ### Chat Widget Not Showing?
 - ✅ Hard refresh browser (Cmd+Shift+R)
 - ✅ Check browser console for errors
-- ✅ Verify widget URL in `components/TawkWidget.tsx`
+- ✅ Verify widget URL in `components/ChatWayWidget.tsx`
 
 ### Build Failing?
 - ✅ Make sure env vars are set in Vercel
@@ -101,8 +101,8 @@ export default function RootLayout({ children }) {
 - [ ] Placed test order
 - [ ] Got customer confirmation email
 - [ ] Got seller alert email
-- [ ] Tawk widget appears on site
-- [ ] Tawk chat opens when clicked
+- [ ] ChatWay widget appears on site
+- [ ] ChatWay chat opens when clicked
 
 ---
 
@@ -112,7 +112,7 @@ For detailed docs, see:
 - `INTEGRATION_GUIDE.md` - Complete setup & configuration
 - `README_INTEGRATIONS.md` - Overview of changes
 - `lib/email/resend-service.ts` - Email service code
-- `components/TawkWidget.tsx` - Chat widget code
+- `components/ChatWayWidget.tsx` - Chat widget code
 
 ---
 
