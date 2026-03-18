@@ -92,7 +92,7 @@ export async function POST(request: Request) {
       }
 
       // Send notification to seller
-      const sellerEmail = process.env.SELLER_EMAIL || "admin@naturalcannabisoil.shop"
+      const sellerEmail = process.env.RESEND_SELLER_EMAIL || "orders@naturalcannabisoil.shop"
       const sellerEmailResult = await sendSellerEmail(emailData, sellerEmail)
       if (!sellerEmailResult.success) {
         console.warn("[Orders API] Seller email failed:", sellerEmailResult.error)
