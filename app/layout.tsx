@@ -70,9 +70,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://naturalcannabisoil.shop"),
+  metadataBase: new URL("https://www.naturalcannabisoil.shop"),
   alternates: {
-    canonical: "https://naturalcannabisoil.shop",
+    canonical: "https://www.naturalcannabisoil.shop",
   },
   icons: {
     icon: [
@@ -368,12 +368,12 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       </head>
       <body className={`font-sans antialiased`}>
-  <CartProvider>
-    <ScrollToTop />
-    {children}
-    <ChatWayWidget />
-    <WhatsAppWidget />
-  </CartProvider>
+        <CartProvider>
+          <ScrollToTop />
+          {children}
+          <ChatWayWidget />
+          <WhatsAppWidget />
+        </CartProvider>
       </body>
     </html>
   )
