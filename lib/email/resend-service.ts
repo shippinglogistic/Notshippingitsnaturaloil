@@ -254,8 +254,9 @@ export async function sendCustomerEmail(data: OrderEmailData): Promise<EmailResp
     }
 
     const client = getResendClient()
+    const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev"
     const response = await client.emails.send({
-      from: "orders@naturalcannabisoil.shop",
+      from: fromEmail,
       to: data.customerEmail,
       subject: `Order Confirmation #${data.orderId}`,
       html: customerEmailTemplate(data),
@@ -286,8 +287,9 @@ export async function sendSellerEmail(data: OrderEmailData, sellerEmail: string)
     }
 
     const client = getResendClient()
+    const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev"
     const response = await client.emails.send({
-      from: "orders@naturalcannabisoil.shop",
+      from: fromEmail,
       to: sellerEmail,
       subject: `New Order Received #${data.orderId}`,
       html: sellerEmailTemplate(data),
