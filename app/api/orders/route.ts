@@ -72,7 +72,7 @@ export async function POST(request: Request) {
         items: order.items,
         subtotal: Number(order.subtotal),
         shippingFee: Number(order.shipping_fee),
-        tax: Number(order.tax),
+        tax: Number(order.tax || 0),
         grandTotal: Number(order.grand_total),
         shippingAddress: {
           address: order.shipping_address,
