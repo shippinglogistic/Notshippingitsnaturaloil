@@ -5,6 +5,7 @@ import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
 import { CartProvider } from "@/lib/cart-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import WhatsAppWidget from "@/components/WhatsAppWidget"
+import TawkChat from "@/components/TawkChat"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -371,6 +372,7 @@ export default function RootLayout({
           <ScrollToTop />
           {children}
           <WhatsAppWidget />
+          <TawkChat />
         </CartProvider>
       </body>
     </html>
