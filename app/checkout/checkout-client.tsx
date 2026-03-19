@@ -229,12 +229,12 @@ export default function CheckoutPageClient() {
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1 mx-auto px-4 py-20 w-[85%]">
-          <BackButton href="/oils" label="Browse Products" className="mb-8" />
+          <BackButton href="/products/rso" label="Browse Products" className="mb-8" />
           <div className="max-w-md mx-auto text-center space-y-6">
             <h1 className="font-serif text-2xl font-bold text-foreground">Your cart is empty</h1>
             <p className="text-muted-foreground">Add some products before checking out.</p>
             <Button asChild>
-              <Link href="/oils">Browse Products</Link>
+              <Link href="/products/rso">Browse Products</Link>
             </Button>
           </div>
         </main>
