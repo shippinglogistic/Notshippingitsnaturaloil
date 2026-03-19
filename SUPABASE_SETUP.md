@@ -58,4 +58,4 @@ Make sure the following environment variables are set in your `.env.local`:
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY` - Your Supabase anonymous key
 - `SUPABASE_SERVICE_ROLE_KEY` - Your Supabase service role key (for server-side operations)
 
-These are automatically configured when Supabase is connected to v0.
+These must be configured in your project environment variables.

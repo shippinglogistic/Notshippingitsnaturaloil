@@ -50,20 +50,20 @@ const nextConfig = {
                                                 value: "strict-origin-when-cross-origin",
                                         },
                                         {
-                                                key: "Content-Security-Policy",
-                                                value:
-                                                        "default-src 'self'; " +
-                                                        "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.chatway.app https://embed.tawk.to https://www.smartsuppchat.com https://call.chatra.io https://app.chatra.io; " +
-                                                        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.chatway.app https://embed.tawk.to; " +
-                                                        "font-src 'self' https://fonts.gstatic.com data:; " +
-                                                        "img-src 'self' data: https: blob:; " +
-                                                        "connect-src 'self' https://cdn.chatway.app https://embed.tawk.to https://www.smartsuppchat.com https://call.chatra.io https://app.chatra.io wss://chatway.app wss://tawk.link wss://chatra.io; " +
-                                                        "frame-src 'self' https://cdn.chatway.app https://embed.tawk.to https://www.smartsuppchat.com https://call.chatra.io https://app.chatra.io; " +
-                                                        "object-src 'none'; " +
-                                                        "base-uri 'self'; " +
-                                                        "form-action 'self'; " +
-                                                        "upgrade-insecure-requests; " +
-                                                        "media-src 'self';",
+                                        key: "Content-Security-Policy",
+                                        value:
+                                                "default-src 'self'; " +
+                                                "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://embed.tawk.to https://www.smartsuppchat.com https://call.chatra.io https://app.chatra.io; " +
+                                                "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://embed.tawk.to; " +
+                                                "font-src 'self' https://fonts.gstatic.com data:; " +
+                                                "img-src 'self' data: https: blob:; " +
+                                                "connect-src 'self' https://embed.tawk.to https://www.smartsuppchat.com https://call.chatra.io https://app.chatra.io wss://tawk.link wss://chatra.io; " +
+                                                "frame-src 'self' https://embed.tawk.to https://www.smartsuppchat.com https://call.chatra.io https://app.chatra.io; " +
+                                                "object-src 'none'; " +
+                                                "base-uri 'self'; " +
+                                                "form-action 'self'; " +
+                                                "upgrade-insecure-requests; " +
+                                                "media-src 'self';",
                                         },
                                 ],
                         },

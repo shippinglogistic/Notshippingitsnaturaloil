@@ -1,10 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
+import Script from "next/script"
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
 
 import { CartProvider } from "@/lib/cart-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
-import ChatWayWidget from "@/components/ChatWayWidget"
 import WhatsAppWidget from "@/components/WhatsAppWidget"
 import "./globals.css"
 
@@ -367,13 +367,29 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       </head>
-      <body className={`font-sans antialiased`}>
+      <body className={`font-sans antialiased`} suppressHydrationWarning>
         <CartProvider>
           <ScrollToTop />
           {children}
-          <ChatWayWidget />
           <WhatsAppWidget />
         </CartProvider>
+        <Script
+          id="tawk-widget"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+              (function(){
+                var s1=document.createElement("script");
+                s1.async=true;
+                s1.src='https://embed.tawk.to/693f60bd7bdcd2197d981cc4/1jcfp3pac';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                document.body.appendChild(s1);
+              })();
+            `,
+          }}
+        />
       </body>
     </html>
   )

@@ -2,9 +2,6 @@
 
 Premium Rick Simpson Oil (RSO) and Full Extract Cannabis Oil (FECO) e-commerce platform with secure checkout, admin dashboard, and advanced features.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://naturalcannabisoil.shop)
-[![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
-
 ## Overview
 
 This is a full-featured e-commerce platform for selling premium cannabis extract products (RSO and FECO) with:
@@ -23,13 +20,13 @@ Your project is live at:
 
 ## Tech Stack
 
-- **Frontend:** Next.js 16, React 19, TypeScript
-- **Styling:** Tailwind CSS v4
+- **Frontend:** Next.js, React, TypeScript
+- **Styling:** Tailwind CSS
 - **Database:** Supabase (PostgreSQL)
 - **Authentication:** Supabase Auth
 - **Email:** Resend
 - **UI Components:** shadcn/ui
-- **Hosting:** Vercel
+- **Hosting:** Cloud Platform
 
 ## How It Works
 
