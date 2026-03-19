@@ -4,7 +4,7 @@ import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
 
 import { CartProvider } from "@/lib/cart-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
-import SmartSuppWidget from "@/components/SmartSuppWidget"
+import ChatWayWidget from "@/components/ChatWayWidget"
 import WhatsAppWidget from "@/components/WhatsAppWidget"
 import "./globals.css"
 
@@ -371,7 +371,7 @@ export default function RootLayout({
         <CartProvider>
           <ScrollToTop />
           {children}
-          <SmartSuppWidget />
+          <ChatWayWidget />
           <WhatsAppWidget />
         </CartProvider>
       </body>
