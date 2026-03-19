@@ -1,18 +1,24 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 export default function ChatWayWidget() {
+  const [isClient, setIsClient] = useState(false)
+
   useEffect(() => {
-    // Only run on client side
-    if (typeof window === "undefined") return
+    setIsClient(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isClient) return
 
     // Check if script already loaded
     if (document.getElementById("chatway-widget")) {
+      console.log("[v0] ChatWay widget script already exists")
       return
     }
 
-    // Add script with direct inline injection for maximum compatibility
+    // Add script with direct injection
     const script = document.createElement("script")
     script.id = "chatway-widget"
     script.async = true
@@ -20,9 +26,27 @@ export default function ChatWayWidget() {
     script.type = "text/javascript"
     script.charset = "UTF-8"
 
-    // Append immediately to body - no delays, no DOMContentLoaded wait
-    document.body.appendChild(script)
-  }, [])
+    script.onload = () => {
+      console.log("[v0] ChatWay widget loaded successfully")
+    }
+
+    script.onerror = () => {
+      console.error("[v0] Failed to load ChatWay widget")
+    }
+
+    // Append to body
+    if (document.body) {
+      document.body.appendChild(script)
+      console.log("[v0] ChatWay widget script appended to body")
+    }
+
+    // Don't clean up on unmount - ChatWay widget should persist
+    return () => {
+      console.log("[v0] ChatWayWidget component unmounting")
+    }
+  }, [isClient])
+
+  if (!isClient) return null
 
   return null
 }
