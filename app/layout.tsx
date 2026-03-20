@@ -4,8 +4,8 @@ import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
 
 import { CartProvider } from "@/lib/cart-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
-import ChatWayWidget from "@/components/ChatWayWidget"
 import WhatsAppWidget from "@/components/WhatsAppWidget"
+import TawkWidget from "@/components/TawkWidget"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -367,12 +367,12 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       </head>
-      <body className={`font-sans antialiased`}>
+      <body className={`font-sans antialiased`} suppressHydrationWarning>
         <CartProvider>
           <ScrollToTop />
           {children}
-          <ChatWayWidget />
           <WhatsAppWidget />
+          <TawkWidget />
         </CartProvider>
       </body>
     </html>

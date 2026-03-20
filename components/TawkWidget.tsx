@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 
-export default function ChatWayWidget() {
+export default function TawkWidget() {
   const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
@@ -12,20 +12,23 @@ export default function ChatWayWidget() {
   useEffect(() => {
     if (!isClient) return
 
-    // Check if script already loaded to prevent duplicates
-    if (document.getElementById("chatway-widget")) {
+    // Check if Tawk widget already loaded
+    if (document.getElementById("tawk-widget")) {
       return
     }
 
-    // Create and inject ChatWay script
+    // Tawk.to inline script injection
+    var Tawk_API = (window as any).Tawk_API || {}
+    var Tawk_LoadStart = new Date()
+
     const script = document.createElement("script")
-    script.id = "chatway-widget"
+    script.id = "tawk-widget"
     script.async = true
-    script.src = "https://cdn.chatway.app/widget.js?id=i3kTzjNeW8UX"
+    script.src = "https://embed.tawk.to/693f60bd7bdcd2197d981cc4/1jcfp3pac"
     script.type = "text/javascript"
     script.charset = "UTF-8"
+    script.setAttribute("crossorigin", "*")
 
-    // Append to body when it's available
     if (document.body) {
       document.body.appendChild(script)
     }
