@@ -17,9 +17,9 @@ export default function TawkWidget() {
       return
     }
 
-    // Tawk.to inline script injection
-    var Tawk_API = (window as any).Tawk_API || {}
-    var Tawk_LoadStart = new Date()
+    // Initialize Tawk API globals before loading script
+    ;(window as any).Tawk_API = (window as any).Tawk_API || {}
+    ;(window as any).Tawk_LoadStart = new Date()
 
     const script = document.createElement("script")
     script.id = "tawk-widget"
@@ -28,6 +28,14 @@ export default function TawkWidget() {
     script.type = "text/javascript"
     script.charset = "UTF-8"
     script.setAttribute("crossorigin", "*")
+
+    script.onload = () => {
+      console.log("[v0] Tawk widget script loaded successfully")
+    }
+
+    script.onerror = () => {
+      console.error("[v0] Failed to load Tawk widget script")
+    }
 
     if (document.body) {
       document.body.appendChild(script)

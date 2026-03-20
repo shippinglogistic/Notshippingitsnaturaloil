@@ -129,7 +129,9 @@ export default function CheckoutPageClient() {
   })
 
   const shippingFee = shippingMethod === "express" ? (isUSA ? 15 : 25) : 0
-  const grandTotal = totalPrice + shippingFee
+  const bitcoinDiscount = selectedPayment === "bitcoin" ? totalPrice * 0.15 : 0
+  const discountedTotal = totalPrice - bitcoinDiscount
+  const grandTotal = discountedTotal + shippingFee
 
   const selectedPaymentMethod = paymentMethods.find((m) => m.id === selectedPayment)
 
@@ -169,6 +171,7 @@ export default function CheckoutPageClient() {
           payment_status: "pending",
           order_status: "pending",
           subtotal: totalPrice,
+          bitcoin_discount: bitcoinDiscount,
           shipping_fee: shippingFee,
           grand_total: grandTotal,
           items: items.map((item) => ({
@@ -449,6 +452,12 @@ export default function CheckoutPageClient() {
                   <span className="text-muted-foreground">Subtotal</span>
                   <span className="text-foreground">${totalPrice.toFixed(2)}</span>
                 </div>
+                {bitcoinDiscount > 0 && (
+                  <div className="flex justify-between text-green-600 font-medium">
+                    <span>Bitcoin Discount (15%)</span>
+                    <span>-${bitcoinDiscount.toFixed(2)}</span>
+                  </div>
+                )}
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Shipping</span>
                   <span className="text-foreground">
@@ -476,6 +485,10 @@ export default function CheckoutPageClient() {
                     </div>
                   ) : selectedPaymentMethod.id === "bitcoin" ? (
                     <div className="space-y-3">
+                      <div className="p-3 bg-green-50 border border-green-200 rounded-lg">
+                        <p className="text-sm font-semibold text-green-700">15% Discount Applied</p>
+                        <p className="text-xs text-green-600 mt-1">Save ${bitcoinDiscount.toFixed(2)} with Bitcoin payment</p>
+                      </div>
                       <div className="p-4 bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 rounded-lg">
                         <div className="flex items-center gap-2 mb-3">
                           <Bitcoin className="h-5 w-5 text-orange-600" />
