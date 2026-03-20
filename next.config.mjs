@@ -53,12 +53,12 @@ const nextConfig = {
                                         key: "Content-Security-Policy",
                                         value:
                                                 "default-src 'self'; " +
-                                                "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://embed.tawk.to; " +
+                                                "script-src 'self' 'unsafe-eval' 'unsafe-inline'; " +
                                                 "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
                                                 "font-src 'self' https://fonts.gstatic.com data:; " +
                                                 "img-src 'self' data: https: blob:; " +
-                                                "connect-src 'self' https://embed.tawk.to wss://tawk.link; " +
-                                                "frame-src 'self' https://embed.tawk.to; " +
+                                                "connect-src 'self'; " +
+                                                "frame-src 'self'; " +
                                                 "object-src 'none'; " +
                                                 "base-uri 'self'; " +
                                                 "form-action 'self'; " +
