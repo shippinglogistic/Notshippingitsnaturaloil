@@ -53,12 +53,12 @@ const nextConfig = {
                                         key: "Content-Security-Policy",
                                         value:
                                                 "default-src 'self'; " +
-                                                "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://embed.tawk.to https://*.tawk.to https://cdn.jsdelivr.net; " +
-                                                "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://embed.tawk.to https://*.tawk.to; " +
+                                                "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.chatway.app; " +
+                                                "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.chatway.app; " +
                                                 "font-src 'self' https://fonts.gstatic.com data:; " +
                                                 "img-src 'self' data: https: blob:; " +
-                                                "connect-src 'self' https://embed.tawk.to https://*.tawk.to wss://tawk.link https://api.tawk.to; " +
-                                                "frame-src 'self' https://embed.tawk.to https://*.tawk.to; " +
+                                                "connect-src 'self' https://cdn.chatway.app https://api.chatway.app wss://*.chatway.app; " +
+                                                "frame-src 'self' https://cdn.chatway.app; " +
                                                 "object-src 'none'; " +
                                                 "base-uri 'self'; " +
                                                 "form-action 'self'; " +
