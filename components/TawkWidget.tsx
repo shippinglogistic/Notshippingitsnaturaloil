@@ -11,35 +11,33 @@ export default function TawkWidget() {
 
   useEffect(() => {
     if (!isClient) return
+    if (typeof window === "undefined") return
 
-    // Check if Tawk widget already loaded
-    if (document.getElementById("tawk-widget")) {
+    // Check if Tawk is already loaded
+    if ((window as any).Tawk_API) {
       return
     }
 
-    // Initialize Tawk API globals before loading script
-    ;(window as any).Tawk_API = (window as any).Tawk_API || {}
-    ;(window as any).Tawk_LoadStart = new Date()
+    // Your exact Tawk initialization script
+    var Tawk_API = (window as any).Tawk_API || {}, Tawk_LoadStart = new Date()
+    ;(window as any).Tawk_API = Tawk_API
+    ;(window as any).Tawk_LoadStart = Tawk_LoadStart
 
-    const script = document.createElement("script")
-    script.id = "tawk-widget"
-    script.async = true
-    script.src = "https://embed.tawk.to/693f60bd7bdcd2197d981cc4/1jcfp3pac"
-    script.type = "text/javascript"
-    script.charset = "UTF-8"
-    script.setAttribute("crossorigin", "*")
-
-    script.onload = () => {
-      // Tawk widget loaded successfully
-    }
-
-    script.onerror = () => {
-      // Failed to load Tawk widget
-    }
-
-    if (document.body) {
-      document.body.appendChild(script)
-    }
+    // IIFE to inject the script
+    ;(function() {
+      var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0]
+      if (!s0) {
+        // Fallback if no script exists yet
+        document.body.appendChild(s1)
+      } else {
+        s1.async = true
+        s1.src = "https://embed.tawk.to/693f60bd7bdcd2197d981cc4/1jcfp3pac"
+        s1.charset = "UTF-8"
+        s1.setAttribute("crossorigin", "*")
+        s0.parentNode?.insertBefore(s1, s0)
+      }
+    })()
   }, [isClient])
 
   if (!isClient) return null
