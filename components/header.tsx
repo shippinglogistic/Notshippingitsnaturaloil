@@ -42,7 +42,7 @@ export function Header() {
     <>
       <div className="bg-amber-500 text-black text-center py-2 px-4 text-sm font-medium">
         <ShoppingCart className="inline-block h-4 w-4 mr-2 -mt-0.5" />
-        Minimum Order: $200 | Free Shipping on Orders Over $500
+        Get 15% discount when you pay with Bitcoin | Minimum Order: $200 | Free Shipping on Orders Over $500
       </div>
 
       <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-[#1a3a2a]">
