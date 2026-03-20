@@ -1,5 +1,5 @@
 # Robots.txt for Natural Cannabis Oil Shop
-# https://naturalcannabisoil.shop
+# https://www.naturalcannabisoil.shop
 
 User-agent: *
 Allow: /
@@ -27,4 +27,4 @@ Allow: /*.js$
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://naturalcannabisoil.shop/sitemap.xml
+Sitemap: https://www.naturalcannabisoil.shop/sitemap.xml

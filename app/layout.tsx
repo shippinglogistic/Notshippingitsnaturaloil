@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     "best Full Extract Cannabis Oil online",
     "full spectrum Full Extract Cannabis Oil",
   ],
-  authors: [{ name: "Natural Cannabis Oil Shop", url: "https://naturalcannabisoil.shop" }],
+  authors: [{ name: "Natural Cannabis Oil Shop", url: "https://www.naturalcannabisoil.shop" }],
   creator: "Natural Cannabis Oil",
   publisher: "Natural Cannabis Oil",
   formatDetection: {
@@ -88,13 +88,13 @@ export const metadata: Metadata = {
     title: "Buy Rick Simpson Oil (RSO) & Full Extract Cannabis Oil (FECO) Online",
     description:
       "Buy Rick Simpson Oil (RSO) and Full Extract Cannabis Oil (FECO) online now. Lab-tested full-spectrum cannabis oil with discreet nationwide shipping today.",
-    url: "https://naturalcannabisoil.shop",
+    url: "https://www.naturalcannabisoil.shop",
     siteName: "Natural Cannabis Oil",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://naturalcannabisoil.shop/og-image.jpg",
+        url: "https://www.naturalcannabisoil.shop/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Buy Rick Simpson Oil (RSO) & FECO Online - Lab-Tested Cannabis Oil",
@@ -128,21 +128,21 @@ export const metadata: Metadata = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://naturalcannabisoil.shop/#website",
+  "@id": "https://www.naturalcannabisoil.shop/#website",
   name: "Rick Simpson Oil for Cancer",
   alternateName: ["RSO for Cancer", "Rick Simpson Oil Shop", "Natural Cannabis Oil Shop"],
-  url: "https://naturalcannabisoil.shop",
+  url: "https://www.naturalcannabisoil.shop",
   description:
     "Premium Rick Simpson Oil (RSO) and Full Extract Cannabis Oil (FECO) for cancer treatment and symptom relief. Lab-tested quality for pain relief, cancer support, anxiety & wellness.",
   publisher: {
     "@type": "Organization",
-    "@id": "https://naturalcannabisoil.shop/#organization",
+    "@id": "https://www.naturalcannabisoil.shop/#organization",
   },
   potentialAction: {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://naturalcannabisoil.shop/search?q={search_term_string}",
+      urlTemplate: "https://www.naturalcannabisoil.shop/search?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },
