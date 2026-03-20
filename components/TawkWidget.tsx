@@ -1,46 +1,30 @@
-"use client"
+import Script from 'next/script'
 
-import { useEffect, useState } from "react"
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
 
-export default function TawkWidget() {
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
-
-  useEffect(() => {
-    if (!isClient) return
-    if (typeof window === "undefined") return
-
-    // Check if Tawk is already loaded
-    if ((window as any).Tawk_API) {
-      return
-    }
-
-    // Your exact Tawk initialization script
-    var Tawk_API = (window as any).Tawk_API || {}, Tawk_LoadStart = new Date()
-    ;(window as any).Tawk_API = Tawk_API
-    ;(window as any).Tawk_LoadStart = Tawk_LoadStart
-
-    // IIFE to inject the script
-    ;(function() {
-      var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0]
-      if (!s0) {
-        // Fallback if no script exists yet
-        document.body.appendChild(s1)
-      } else {
-        s1.async = true
-        s1.src = "https://embed.tawk.to/693f60bd7bdcd2197d981cc4/1jcfp3pac"
-        s1.charset = "UTF-8"
-        s1.setAttribute("crossorigin", "*")
-        s0.parentNode?.insertBefore(s1, s0)
-      }
-    })()
-  }, [isClient])
-
-  if (!isClient) return null
-
-  return null
+        <Script
+          id="tawk-to-script"
+          strategy="lazyOnload"  // Loads after page is usable → best for chat widgets
+          dangerouslySetInnerHTML={{
+            __html: `
+                                                                                    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+                                                                                                  (function(){
+                                                                                                                  var s1 = document.createElement("script"),
+                                                                                                                                      s0 = document.getElementsByTagName("script")[0];
+                                                                                                                                                      s1.async = true;
+                                                                                                                                                                      s1.src = 'https://embed.tawk.to/693f60bd7bdcd2197d981cc4/1jcfp3pac';
+                                                                                                                                                                                      s1.charset = 'UTF-8';
+                                                                                                                                                                                                      s1.setAttribute('crossorigin', '*');
+                                                                                                                                                                                                                      s0.parentNode.insertBefore(s1, s0);
+                                                                                                                                                                                                                                    })();
+                                                                                                                                                                                                                                                `,
+          }}
+        />
+      </body>
+    </html>
+  )
 }
