@@ -65,18 +65,18 @@ export const metadata: Metadata = {
     "full spectrum Full Extract Cannabis Oil",
   ],
   alternates: {
-    canonical: "https://naturalcannabisoil.shop",
+    canonical: "https://www.naturalcannabisoil.shop",
   },
   openGraph: {
     title: "Buy Premium RSO & FECO Online - Lab-Tested Cannabis Extracts",
     description:
       "Authentic RSO and FECO with 72-95% THC. Lab-tested, multiple forms, discreet shipping, free over $100. 4.8★ rated.",
-    url: "https://naturalcannabisoil.shop",
+    url: "https://www.naturalcannabisoil.shop",
     type: "website",
     locale: "en_US",
     images: [
       {
-        url: "https://naturalcannabisoil.shop/dark-amber-cannabis-oil-dropper-bottle.jpg",
+        url: "https://www.naturalcannabisoil.shop/dark-amber-cannabis-oil-dropper-bottle.jpg",
         width: 1200,
         height: 630,
         alt: "Premium Rick Simpson Oil and FECO Cannabis Extracts",
@@ -116,8 +116,8 @@ const productListSchema = {
         "@type": "Product",
         name: "RSO (Rick Simpson Oil)",
         description: "THC-rich, full-spectrum oil. Lab tested with 93.3% total THC. Strong symptom relief.",
-        image: "https://naturalcannabisoil.shop/images/rso-1g.png",
-        url: "https://naturalcannabisoil.shop/products/rso",
+        image: "https://www.naturalcannabisoil.shop/images/rso-1g.png",
+        url: "https://www.naturalcannabisoil.shop/products/rso",
         brand: {
           "@type": "Brand",
           name: "Natural Cannabis Oil",
@@ -128,7 +128,7 @@ const productListSchema = {
           price: "60.00",
           priceValidUntil: "2025-12-31",
           availability: "https://schema.org/InStock",
-          url: "https://naturalcannabisoil.shop/products/rso",
+          url: "https://www.naturalcannabisoil.shop/products/rso",
         },
         aggregateRating: {
           "@type": "AggregateRating",
@@ -146,8 +146,8 @@ const productListSchema = {
         "@type": "Product",
         name: "FECO (Full Extract Cannabis Oil)",
         description: "Multiple cannabinoid ratios available. Choose from THC-dominant, CBD-dominant, or balanced.",
-        image: "https://naturalcannabisoil.shop/images/feco-package.jpg",
-        url: "https://naturalcannabisoil.shop/products/feco",
+        image: "https://www.naturalcannabisoil.shop/images/feco-package.jpg",
+        url: "https://www.naturalcannabisoil.shop/products/feco",
         brand: {
           "@type": "Brand",
           name: "Natural Cannabis Oil",
@@ -158,7 +158,7 @@ const productListSchema = {
           price: "55.00",
           priceValidUntil: "2025-12-31",
           availability: "https://schema.org/InStock",
-          url: "https://naturalcannabisoil.shop/products/feco",
+          url: "https://www.naturalcannabisoil.shop/products/feco",
         },
         aggregateRating: {
           "@type": "AggregateRating",
@@ -176,8 +176,8 @@ const productListSchema = {
         "@type": "Product",
         name: "Premium Tinctures",
         description: "Top 5 premium CBD brands. Easy sublingual dosing with fast absorption.",
-        image: "https://naturalcannabisoil.shop/premium-cbd-tincture-bottles-collection.jpg",
-        url: "https://naturalcannabisoil.shop/products/tinctures",
+        image: "https://www.naturalcannabisoil.shop/premium-cbd-tincture-bottles-collection.jpg",
+        url: "https://www.naturalcannabisoil.shop/products/tinctures",
         brand: {
           "@type": "Brand",
           name: "Natural Cannabis Oil",
@@ -188,7 +188,7 @@ const productListSchema = {
           price: "39.99",
           priceValidUntil: "2025-12-31",
           availability: "https://schema.org/InStock",
-          url: "https://naturalcannabisoil.shop/products/tinctures",
+          url: "https://www.naturalcannabisoil.shop/products/tinctures",
         },
         aggregateRating: {
           "@type": "AggregateRating",
@@ -206,8 +206,8 @@ const productListSchema = {
         "@type": "Product",
         name: "THC/CBD Gummies",
         description: "Premium gummies from Kiva, Wana, and Papa & Barkley. Precise dosing for symptom relief.",
-        image: "https://naturalcannabisoil.shop/premium-cannabis-gummies-colorful-assortment.jpg",
-        url: "https://naturalcannabisoil.shop/products/edibles",
+        image: "https://www.naturalcannabisoil.shop/premium-cannabis-gummies-colorful-assortment.jpg",
+        url: "https://www.naturalcannabisoil.shop/products/edibles",
         brand: {
           "@type": "Brand",
           name: "Natural Cannabis Oil",
@@ -218,7 +218,7 @@ const productListSchema = {
           price: "24.99",
           priceValidUntil: "2025-12-31",
           availability: "https://schema.org/InStock",
-          url: "https://naturalcannabisoil.shop/products/edibles",
+          url: "https://www.naturalcannabisoil.shop/products/edibles",
         },
         aggregateRating: {
           "@type": "AggregateRating",
@@ -309,7 +309,7 @@ const howToSchema = {
   name: "How to Buy RSO and FECO Online",
   description:
     "Step-by-step guide to ordering lab-tested Rick Simpson Oil and Full Extract Cannabis Oil online with fast, discreet shipping.",
-  image: "https://naturalcannabisoil.shop/og-image.jpg",
+  image: "https://www.naturalcannabisoil.shop/og-image.jpg",
   step: [
     {
       "@type": "HowToStep",
@@ -317,7 +317,7 @@ const howToSchema = {
       name: "Browse Lab-Tested Products",
       description:
         "Explore our selection of premium RSO, FECO, and other cannabis extracts. All products are third-party lab tested for potency and purity.",
-      image: "https://naturalcannabisoil.shop/og-image.jpg",
+      image: "https://www.naturalcannabisoil.shop/images/rso-1g.png",
     },
     {
       "@type": "HowToStep",
@@ -325,7 +325,7 @@ const howToSchema = {
       name: "Add to Cart and Checkout",
       description:
         "Add your chosen products to your cart and proceed to our secure checkout. We accept multiple payment methods including Apple Pay, PayPal, Bitcoin, and more.",
-      image: "https://naturalcannabisoil.shop/og-image.jpg",
+      image: "https://www.naturalcannabisoil.shop/images/cart-checkout-example.jpg",
     },
     {
       "@type": "HowToStep",
@@ -333,7 +333,7 @@ const howToSchema = {
       name: "Receive Order Confirmation",
       description:
         "Get immediate order confirmation with tracking details. Your order is processed with priority handling and ships within 1-2 business days.",
-      image: "https://naturalcannabisoil.shop/og-image.jpg",
+      image: "https://www.naturalcannabisoil.shop/images/order-confirmation-email.jpg",
     },
     {
       "@type": "HowToStep",
@@ -341,7 +341,7 @@ const howToSchema = {
       name: "Fast, Discreet Shipping",
       description:
         "Orders arrive in plain, unmarked packaging. Free shipping on orders over $100. Most deliveries arrive within 3-7 business days to any location we serve.",
-      image: "https://naturalcannabisoil.shop/og-image.jpg",
+      image: "https://www.naturalcannabisoil.shop/images/plain-discreet-package.jpg",
     },
   ],
 }
