@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/admin-orders", "/api/", "/checkout"],
       },
     ],
-    sitemap: "https://naturalcannabisoil.shop/sitemap.xml",
+    sitemap: "https://www.naturalcannabisoil.shop/sitemap.xml",
   }
 }

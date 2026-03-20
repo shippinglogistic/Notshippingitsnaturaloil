@@ -30,11 +30,11 @@ export default function TawkWidget() {
     script.setAttribute("crossorigin", "*")
 
     script.onload = () => {
-      console.log("[v0] Tawk widget script loaded successfully")
+      // Tawk widget loaded successfully
     }
 
     script.onerror = () => {
-      console.error("[v0] Failed to load Tawk widget script")
+      // Failed to load Tawk widget
     }
 
     if (document.body) {

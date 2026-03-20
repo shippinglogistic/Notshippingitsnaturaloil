@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next"
 import { blogPosts } from "@/lib/blog-posts"
 
-const BASE_URL = "https://naturalcannabisoil.shop"
+const BASE_URL = "https://www.naturalcannabisoil.shop"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Main pages
