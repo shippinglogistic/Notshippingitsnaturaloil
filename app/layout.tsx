@@ -6,7 +6,6 @@ import Script from "next/script"
 import { CartProvider } from "@/lib/cart-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import WhatsAppWidget from "@/components/WhatsAppWidget"
-import SmartsuppWidget from "@/components/SmartsuppWidget"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -148,7 +147,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/images/rso-syringe-professional.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "Buy Rick Simpson Oil (RSO) & Full Extract Cannabis Oil (FECO) Online",
+    title: "Buy Rick Simpson Oil (RSO) & FECO Online",
     description:
       "Buy Rick Simpson Oil (RSO) and Full Extract Cannabis Oil (FECO) online now. Lab-tested full-spectrum cannabis oil with discreet nationwide shipping today.",
     url: "https://www.naturalcannabisoil.shop",
@@ -425,12 +424,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NN5V93GX');</script>
+        <!-- End Google Tag Manager -->
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       </head>
       <body className={`font-sans antialiased`} suppressHydrationWarning>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NN5V93GX"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
         <CartProvider>
           <ScrollToTop />
           {children}
