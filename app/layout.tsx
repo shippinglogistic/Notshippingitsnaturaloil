@@ -376,7 +376,7 @@ export default function RootLayout({
         <Script
           id="chatway-widget"
           strategy="afterInteractive"
-          src="https://cdn.chatway.app/widget.js?id=YOUR_CHATWAY_ID_HERE"
+          src="https://cdn.chatway.app/widget.js?id=i3kTzjNeW8UX"
           async
         />
       </body>
