@@ -375,9 +375,20 @@ export default function RootLayout({
         </CartProvider>
         <Script
           id="chatway-widget"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://cdn.chatway.app/widget.js?id=i3kTzjNeW8UX"
           async
+          onLoad={() => {
+            console.log("[v0] Chatway widget script loaded successfully")
+          }}
+          onError={() => {
+            console.error("[v0] Failed to load Chatway widget script")
+          }}
+        />
+        <script
+          async
+          src="https://cdn.chatway.app/widget.js?id=i3kTzjNeW8UX"
+          suppressHydrationWarning={true as any}
         />
       </body>
     </html>
