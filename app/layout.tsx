@@ -6,7 +6,7 @@ import Script from "next/script"
 import { CartProvider } from "@/lib/cart-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import WhatsAppWidget from "@/components/WhatsAppWidget"
-import SmartsuppWidget from "@/components/SmartsuppWidget"
+import { SmartSuppWidget } from "@/components/SmartsuppWidget"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -435,6 +435,7 @@ export default function RootLayout({
           <ScrollToTop />
           {children}
           <WhatsAppWidget />
+          <SmartSuppWidget />
         </CartProvider>
       </body>
     </html>

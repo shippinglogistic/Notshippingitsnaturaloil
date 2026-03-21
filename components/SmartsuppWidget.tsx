@@ -20,13 +20,9 @@ export function SmartSuppWidget() {
       })(document);
     `
 
-    // Add to body with a slight delay to ensure DOM is ready
-    const timer = setTimeout(() => {
-      document.body.appendChild(script)
-    }, 1000)
+    document.body.appendChild(script)
 
     return () => {
-      clearTimeout(timer)
       // Cleanup if component unmounts
       if (script.parentNode) {
         script.parentNode.removeChild(script)
