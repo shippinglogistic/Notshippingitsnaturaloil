@@ -6,6 +6,7 @@ import Script from "next/script"
 import { CartProvider } from "@/lib/cart-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import WhatsAppWidget from "@/components/WhatsAppWidget"
+import SmartsuppWidget from "@/components/SmartsuppWidget"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -61,6 +62,68 @@ export const metadata: Metadata = {
     "order Full Extract Cannabis Oil",
     "best Full Extract Cannabis Oil online",
     "full spectrum Full Extract Cannabis Oil",
+    "rick simpson oil online",
+    "rick simpson oil online",
+    "buy rso oil online",
+    "best rso oil for sale",
+    "rso syringe near me",
+    "high potency rso",
+    "rick simpson oil buy",
+    "where to buy rso",
+    "rso for sale",
+    "best rso brands 2026",
+    "potent rso syringe",
+    "rso oil dispensary",
+    "rick simpson oil near me",
+    "buy high thc rso",
+    "rso full extract oil",
+    "best rso for pain relief",
+    "rso cancer support oil",
+    "affordable rso oil",
+    "premium rso syringe",
+    "rso delivery near me",
+    "top rso products 2026",
+    "rick simpson oil dosage guide buy",
+    "strong rso for beginners",
+    "organic rso oil",
+    "rso edibles for sale",
+    "lab tested rso buy",
+    "best place to buy rso",
+    "high strength rso oil",
+    "rso phoenix tears for sale",
+    "rso therapeutic oil online",
+    "buy rso concentrate",
+    "feco oil online",
+    "buy feco oil online",
+    "best feco oil for sale",
+    "feco syringe near me",
+    "high potency feco",
+    "full extract cannabis oil buy",
+    "where to buy feco",
+    "feco for sale",
+    "best feco brands 2026",
+    "potent feco syringe",
+    "feco oil dispensary",
+    "full extract cannabis oil near me",
+    "buy high thc feco",
+    "feco full spectrum oil",
+    "best feco for pain relief",
+    "feco cancer support oil",
+    "affordable feco oil",
+    "premium feco syringe",
+    "feco delivery near me",
+    "top feco products 2026",
+    "full extract cannabis oil dosage guide buy",
+    "strong feco for beginners",
+    "organic feco oil",
+    "feco edibles for sale",
+    "lab tested feco buy",
+    "best place to buy feco",
+    "high strength feco oil",
+    "feco vs rso",
+    "feco therapeutic oil online",
+    "buy feco concentrate",
+    "what is feco",
   ],
   authors: [{ name: "Natural Cannabis Oil Shop", url: "https://www.naturalcannabisoil.shop" }],
   creator: "Natural Cannabis Oil",
@@ -152,23 +215,23 @@ const websiteSchema = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://naturalcannabisoil.shop/#organization",
+  "@id": "https://www.naturalcannabisoil.shop/#organization",
   name: "Rick Simpson Oil for Cancer",
   legalName: "Rick Simpson Oil for Cancer LLC",
   alternateName: ["RSO for Cancer", "Natural Cannabis Oil Shop"],
-  url: "https://naturalcannabisoil.shop",
+  url: "https://www.naturalcannabisoil.shop",
   logo: {
     "@type": "ImageObject",
-    "@id": "https://naturalcannabisoil.shop/#logo",
-    url: "https://naturalcannabisoil.shop/logo.svg",
-    contentUrl: "https://naturalcannabisoil.shop/logo.svg",
+    "@id": "https://www.naturalcannabisoil.shop/#logo",
+    url: "https://www.naturalcannabisoil.shop/logo.svg",
+    contentUrl: "https://www.naturalcannabisoil.shop/logo.svg",
     width: 200,
     height: 60,
     caption: "Rick Simpson Oil for Cancer - Premium RSO & FECO",
   },
   image: {
     "@type": "ImageObject",
-    url: "https://naturalcannabisoil.shop/og-image.jpg",
+    url: "https://www.naturalcannabisoil.shop/og-image.jpg",
     width: 1200,
     height: 630,
   },
@@ -267,10 +330,10 @@ const organizationSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "Store",
-  "@id": "https://naturalcannabisoil.shop/#store",
+  "@id": "https://www.naturalcannabisoil.shop/#store",
   name: "Rick Simpson Oil for Cancer",
-  image: "https://naturalcannabisoil.shop/og-image.jpg",
-  url: "https://naturalcannabisoil.shop",
+  image: "https://www.naturalcannabisoil.shop/og-image.jpg",
+  url: "https://www.naturalcannabisoil.shop",
   telephone: "+1-555-123-4567",
   email: "support@naturalcannabisoil.shop",
   priceRange: "$$$",
@@ -349,7 +412,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://naturalcannabisoil.shop",
+      item: "https://www.naturalcannabisoil.shop",
     },
   ],
 }
@@ -372,13 +435,19 @@ export default function RootLayout({
           <ScrollToTop />
           {children}
           <WhatsAppWidget />
+          <!-- Smartsupp Live Chat script -->
+          <script type="text/javascript">
+            var _smartsupp = _smartsupp || { };
+            _smartsupp.key = 'a9438b30f1a416acb20d37824921a765b7bed2fc';
+            window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){o._.push(arguments)};o._=[];
+            s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+            c.type='text/javascript';c.charset='utf-8';c.async=true;
+            c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+          </script>
+          <noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
         </CartProvider>
-        <Script
-          id="chatway-widget"
-          strategy="afterInteractive"
-          src="https://cdn.chatway.app/widget.js?id=i3kTzjNeW8UX"
-          async
-        />
       </body>
     </html>
   )
