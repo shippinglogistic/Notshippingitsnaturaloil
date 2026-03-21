@@ -375,7 +375,7 @@ export default function RootLayout({
         </CartProvider>
         <Script
           id="smartsupp-widget"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               var _smartsupp = _smartsupp || {};

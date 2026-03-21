@@ -53,17 +53,17 @@ const nextConfig = {
                                         key: "Content-Security-Policy",
                                         value:
                                                 "default-src 'self'; " +
-                                                "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.smartsuppchat.com; " +
-                                                "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.smartsuppchat.com; " +
+                                                "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.smartsuppchat.com https://*.smartsuppchat.com https://*.smartsupp.com; " +
+                                                "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.smartsuppchat.com https://*.smartsuppchat.com https://*.smartsupp.com; " +
                                                 "font-src 'self' https://fonts.gstatic.com data:; " +
                                                 "img-src 'self' data: https: blob:; " +
-                                                "connect-src 'self' https://www.smartsuppchat.com https://*.smartsuppchat.com wss://*.smartsupp.com; " +
-                                                "frame-src 'self' https://www.smartsuppchat.com; " +
+                                                "connect-src 'self' https://www.smartsuppchat.com https://*.smartsuppchat.com https://*.smartsupp.com wss://*.smartsupp.com wss://api.smartsupp.com; " +
+                                                "frame-src 'self' https://www.smartsuppchat.com https://*.smartsuppchat.com https://*.smartsupp.com; " +
                                                 "object-src 'none'; " +
                                                 "base-uri 'self'; " +
                                                 "form-action 'self'; " +
                                                 "upgrade-insecure-requests; " +
-                                                "media-src 'self';",
+                                                "media-src 'self' https: data: blob:;",
                                         },
                                 ],
                         },
