@@ -378,12 +378,6 @@ export default function RootLayout({
           strategy="lazyOnload"
           src="https://cdn.chatway.app/widget.js?id=i3kTzjNeW8UX"
           async
-          onLoad={() => {
-            console.log("[v0] Chatway widget script loaded successfully")
-          }}
-          onError={() => {
-            console.error("[v0] Failed to load Chatway widget script")
-          }}
         />
         <script
           async
