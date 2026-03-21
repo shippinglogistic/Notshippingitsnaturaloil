@@ -6,6 +6,7 @@ import Script from "next/script"
 import { CartProvider } from "@/lib/cart-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import WhatsAppWidget from "@/components/WhatsAppWidget"
+import SmartsuppWidget from "@/components/SmartsuppWidget"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -428,40 +429,12 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-
-        {/* Smartsupp Live Chat script – optimized for Next.js */}
-        <Script
-          id="smartsupp-chat"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              var _smartsupp = _smartsupp || {};
-              _smartsupp.key = '${process.env.NEXT_PUBLIC_SMARTSUPP_KEY || 'a9438b30f1a416acb20d37824921a765b7bed2fc'}';
-              _smartsupp.hideWidget = false;
-              _smartsupp.hideMobileWidget = false;
-
-              window.smartsupp||(function(d) {
-                var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-                s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-                c.type='text/javascript';c.charset='utf-8';c.async=true;
-                c.src='https://www.smartsuppchat.com/loader.js';s.parentNode.insertBefore(c,s);
-              })(document);
-
-              console.log('Smartsupp script loaded'); // temporary debug - remove after confirmation
-            `,
-          }}
-        />
       </head>
       <body className={`font-sans antialiased`} suppressHydrationWarning>
         <CartProvider>
           <ScrollToTop />
           {children}
           <WhatsAppWidget />
-
-          {/* Smartsupp noscript fallback */}
-          <noscript>
-            Powered by <a href="https://www.smartsupp.com" target="_blank" rel="noopener noreferrer">Smartsupp</a>
-          </noscript>
         </CartProvider>
       </body>
     </html>
