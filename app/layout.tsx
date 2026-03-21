@@ -375,14 +375,9 @@ export default function RootLayout({
         </CartProvider>
         <Script
           id="chatway-widget"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           src="https://cdn.chatway.app/widget.js?id=i3kTzjNeW8UX"
           async
-        />
-        <script
-          async
-          src="https://cdn.chatway.app/widget.js?id=i3kTzjNeW8UX"
-          suppressHydrationWarning={true as any}
         />
       </body>
     </html>
