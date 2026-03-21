@@ -1,11 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
-import Script from "next/script"
 
 import { CartProvider } from "@/lib/cart-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import WhatsAppWidget from "@/components/WhatsAppWidget"
+import TawkWidget from "@/components/TawkWidget"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -61,68 +61,6 @@ export const metadata: Metadata = {
     "order Full Extract Cannabis Oil",
     "best Full Extract Cannabis Oil online",
     "full spectrum Full Extract Cannabis Oil",
-    "rick simpson oil online",
-    "rick simpson oil online",
-    "buy rso oil online",
-    "best rso oil for sale",
-    "rso syringe near me",
-    "high potency rso",
-    "rick simpson oil buy",
-    "where to buy rso",
-    "rso for sale",
-    "best rso brands 2026",
-    "potent rso syringe",
-    "rso oil dispensary",
-    "rick simpson oil near me",
-    "buy high thc rso",
-    "rso full extract oil",
-    "best rso for pain relief",
-    "rso cancer support oil",
-    "affordable rso oil",
-    "premium rso syringe",
-    "rso delivery near me",
-    "top rso products 2026",
-    "rick simpson oil dosage guide buy",
-    "strong rso for beginners",
-    "organic rso oil",
-    "rso edibles for sale",
-    "lab tested rso buy",
-    "best place to buy rso",
-    "high strength rso oil",
-    "rso phoenix tears for sale",
-    "rso therapeutic oil online",
-    "buy rso concentrate",
-    "feco oil online",
-    "buy feco oil online",
-    "best feco oil for sale",
-    "feco syringe near me",
-    "high potency feco",
-    "full extract cannabis oil buy",
-    "where to buy feco",
-    "feco for sale",
-    "best feco brands 2026",
-    "potent feco syringe",
-    "feco oil dispensary",
-    "full extract cannabis oil near me",
-    "buy high thc feco",
-    "feco full spectrum oil",
-    "best feco for pain relief",
-    "feco cancer support oil",
-    "affordable feco oil",
-    "premium feco syringe",
-    "feco delivery near me",
-    "top feco products 2026",
-    "full extract cannabis oil dosage guide buy",
-    "strong feco for beginners",
-    "organic feco oil",
-    "feco edibles for sale",
-    "lab tested feco buy",
-    "best place to buy feco",
-    "high strength feco oil",
-    "feco vs rso",
-    "feco therapeutic oil online",
-    "buy feco concentrate",
-    "what is feco",
   ],
   authors: [{ name: "Natural Cannabis Oil Shop", url: "https://www.naturalcannabisoil.shop" }],
   creator: "Natural Cannabis Oil",
@@ -147,7 +85,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/images/rso-syringe-professional.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "Buy Rick Simpson Oil (RSO) & FECO Online",
+    title: "Buy Rick Simpson Oil (RSO) & Full Extract Cannabis Oil (FECO) Online",
     description:
       "Buy Rick Simpson Oil (RSO) and Full Extract Cannabis Oil (FECO) online now. Lab-tested full-spectrum cannabis oil with discreet nationwide shipping today.",
     url: "https://www.naturalcannabisoil.shop",
@@ -214,23 +152,23 @@ const websiteSchema = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://www.naturalcannabisoil.shop/#organization",
+  "@id": "https://naturalcannabisoil.shop/#organization",
   name: "Rick Simpson Oil for Cancer",
   legalName: "Rick Simpson Oil for Cancer LLC",
   alternateName: ["RSO for Cancer", "Natural Cannabis Oil Shop"],
-  url: "https://www.naturalcannabisoil.shop",
+  url: "https://naturalcannabisoil.shop",
   logo: {
     "@type": "ImageObject",
-    "@id": "https://www.naturalcannabisoil.shop/#logo",
-    url: "https://www.naturalcannabisoil.shop/logo.svg",
-    contentUrl: "https://www.naturalcannabisoil.shop/logo.svg",
+    "@id": "https://naturalcannabisoil.shop/#logo",
+    url: "https://naturalcannabisoil.shop/logo.svg",
+    contentUrl: "https://naturalcannabisoil.shop/logo.svg",
     width: 200,
     height: 60,
     caption: "Rick Simpson Oil for Cancer - Premium RSO & FECO",
   },
   image: {
     "@type": "ImageObject",
-    url: "https://www.naturalcannabisoil.shop/og-image.jpg",
+    url: "https://naturalcannabisoil.shop/og-image.jpg",
     width: 1200,
     height: 630,
   },
@@ -329,10 +267,10 @@ const organizationSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "Store",
-  "@id": "https://www.naturalcannabisoil.shop/#store",
+  "@id": "https://naturalcannabisoil.shop/#store",
   name: "Rick Simpson Oil for Cancer",
-  image: "https://www.naturalcannabisoil.shop/og-image.jpg",
-  url: "https://www.naturalcannabisoil.shop",
+  image: "https://naturalcannabisoil.shop/og-image.jpg",
+  url: "https://naturalcannabisoil.shop",
   telephone: "+1-555-123-4567",
   email: "support@naturalcannabisoil.shop",
   priceRange: "$$$",
@@ -411,7 +349,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.naturalcannabisoil.shop",
+      item: "https://naturalcannabisoil.shop",
     },
   ],
 }
@@ -424,41 +362,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Tag Manager */}
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NN5V93GX');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
-
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       </head>
       <body className={`font-sans antialiased`} suppressHydrationWarning>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NN5V93GX"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
-
         <CartProvider>
           <ScrollToTop />
           {children}
           <WhatsAppWidget />
+          <TawkWidget />
         </CartProvider>
       </body>
     </html>
