@@ -6,7 +6,6 @@ import Script from "next/script"
 import { CartProvider } from "@/lib/cart-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import WhatsAppWidget from "@/components/WhatsAppWidget"
-import SmartsuppWidget from "@/components/SmartsuppWidget"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -148,7 +147,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/images/rso-syringe-professional.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "Buy Rick Simpson Oil (RSO) & Full Extract Cannabis Oil (FECO) Online",
+    title: "Buy Rick Simpson Oil (RSO) & FECO Online",
     description:
       "Buy Rick Simpson Oil (RSO) and Full Extract Cannabis Oil (FECO) online now. Lab-tested full-spectrum cannabis oil with discreet nationwide shipping today.",
     url: "https://www.naturalcannabisoil.shop",
