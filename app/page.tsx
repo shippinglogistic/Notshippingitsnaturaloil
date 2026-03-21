@@ -63,6 +63,7 @@ export const metadata: Metadata = {
     "order Full Extract Cannabis Oil",
     "best Full Extract Cannabis Oil online",
     "full spectrum Full Extract Cannabis Oil",
+    "rick simpson oil online"
   ],
   alternates: {
     canonical: "https://www.naturalcannabisoil.shop",
