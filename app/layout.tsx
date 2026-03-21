@@ -374,47 +374,10 @@ export default function RootLayout({
           <WhatsAppWidget />
         </CartProvider>
         <Script
-          id="tawk-to-script"
+          id="chatway-widget"
           strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Initialize Tawk API with debugging
-              var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-              
-              // Configure Tawk widget positioning and options
-              Tawk_API.onLoad = function() {
-                console.log('[v0] Tawk.to loaded successfully on:', window.location.href);
-              };
-              
-              Tawk_API.onStatusChange = function(status) {
-                console.log('[v0] Tawk status changed to:', status);
-              };
-              
-              Tawk_API.onBeforeLoad = function() {
-                console.log('[v0] Tawk before load - domain:', window.location.hostname);
-              };
-
-              // Inject Tawk script with error handling
-              (function(){
-                var s1 = document.createElement("script"),
-                    s0 = document.getElementsByTagName("script")[0];
-                s1.async = true;
-                s1.src = 'https://embed.tawk.to/693f60bd7bdcd2197d981cc4/1jcfp3pac';
-                s1.charset = 'UTF-8';
-                s1.setAttribute('crossorigin', '*');
-                
-                s1.onload = function() {
-                  console.log('[v0] Tawk script loaded from CDN');
-                };
-                
-                s1.onerror = function() {
-                  console.error('[v0] Failed to load Tawk script');
-                };
-                
-                s0.parentNode.insertBefore(s1, s0);
-              })();
-            `,
-          }}
+          src="https://cdn.chatway.app/widget.js?id=i3kTzjNeW8UX"
+          async
         />
       </body>
     </html>
