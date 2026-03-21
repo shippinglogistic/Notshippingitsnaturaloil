@@ -53,12 +53,12 @@ const nextConfig = {
                                         key: "Content-Security-Policy",
                                         value:
                                                 "default-src 'self'; " +
-                                                "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.chatway.app; " +
-                                                "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.chatway.app; " +
+                                                "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.smartsuppchat.com; " +
+                                                "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.smartsuppchat.com; " +
                                                 "font-src 'self' https://fonts.gstatic.com data:; " +
                                                 "img-src 'self' data: https: blob:; " +
-                                                "connect-src 'self' https://cdn.chatway.app https://api.chatway.app wss://*.chatway.app; " +
-                                                "frame-src 'self' https://cdn.chatway.app; " +
+                                                "connect-src 'self' https://www.smartsuppchat.com https://*.smartsuppchat.com wss://*.smartsupp.com; " +
+                                                "frame-src 'self' https://www.smartsuppchat.com; " +
                                                 "object-src 'none'; " +
                                                 "base-uri 'self'; " +
                                                 "form-action 'self'; " +
