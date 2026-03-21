@@ -373,7 +373,6 @@ export default function RootLayout({
           <ScrollToTop />
           {children}
           <WhatsAppWidget />
-          {/* Smartsupp Live Chat Widget - Client Component */}
           <SmartsuppWidget />
         </CartProvider>
       </body>
