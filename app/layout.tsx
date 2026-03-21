@@ -6,6 +6,7 @@ import Script from "next/script"
 import { CartProvider } from "@/lib/cart-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import WhatsAppWidget from "@/components/WhatsAppWidget"
+import SmartsuppWidget from "@/components/SmartsuppWidget"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -372,23 +373,9 @@ export default function RootLayout({
           <ScrollToTop />
           {children}
           <WhatsAppWidget />
+          {/* Smartsupp Live Chat Widget - Client Component */}
+          <SmartsuppWidget />
         </CartProvider>
-        <Script
-          id="smartsupp-widget"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-              var _smartsupp = _smartsupp || {};
-              _smartsupp.key = 'a9438b30f1a416acb20d37824921a765b7bed2fc';
-              window.smartsupp||(function(d) {
-                var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-                s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-                c.type='text/javascript';c.charset='utf-8';c.async=true;
-                c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-              })(document);
-            `,
-          }}
-        />
       </body>
     </html>
   )
