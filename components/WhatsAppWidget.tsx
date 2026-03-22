@@ -13,7 +13,7 @@ export default function WhatsAppWidget() {
   if (!isClient) return null
 
   // WhatsApp number: +19194632493
-  const phoneNumber = '9194632493'
+  const phoneNumber = '+19194632493'
   const message = 'Hi, I have a question about your products.'
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
