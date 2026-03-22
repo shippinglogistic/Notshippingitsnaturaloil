@@ -49,22 +49,22 @@ const nextConfig = {
                                                 key: "Referrer-Policy",
                                                 value: "strict-origin-when-cross-origin",
                                         },
-                                        {
-                                        key: "Content-Security-Policy",
-                                        value:
-                                                "default-src 'self'; " +
-                                                "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://embed.tawk.to https://*.tawk.to https://cdn.jsdelivr.net; " +
-                                                "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://embed.tawk.to https://*.tawk.to; " +
-                                                "font-src 'self' https://fonts.gstatic.com data:; " +
-                                                "img-src 'self' data: https: blob:; " +
-                                                "connect-src 'self' https://embed.tawk.to https://*.tawk.to wss://tawk.link https://api.tawk.to; " +
-                                                "frame-src 'self' https://embed.tawk.to https://*.tawk.to; " +
-                                                "object-src 'none'; " +
-                                                "base-uri 'self'; " +
-                                                "form-action 'self'; " +
-                                                "upgrade-insecure-requests; " +
-                                                "media-src 'self';",
-                                        },
+								{
+								key: "Content-Security-Policy",
+								value:
+									"default-src 'self'; " +
+									"script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.jsdelivr.net; " +
+									"style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
+									"font-src 'self' https://fonts.gstatic.com data:; " +
+									"img-src 'self' data: https: blob:; " +
+									"connect-src 'self'; " +
+									"frame-src 'self'; " +
+									"object-src 'none'; " +
+									"base-uri 'self'; " +
+									"form-action 'self'; " +
+									"upgrade-insecure-requests; " +
+									"media-src 'self';",
+								},
                                 ],
                         },
                 ]
