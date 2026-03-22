@@ -1,4 +1,4 @@
-import type React from "react"
+import React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
 
@@ -75,12 +75,9 @@ export const metadata: Metadata = {
     canonical: "https://www.naturalcannabisoil.shop",
   },
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "32x32" },
-      { url: "/favicon.ico", sizes: "16x16" },
-    ],
+    icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: [{ url: "/favicon.ico", sizes: "180x180" }],
+    apple: "/favicon.ico",
   },
   openGraph: {
     title: "Buy RSO and FECO Online | Rick Simpson Oil & Full Extract Cannabis Oil",
@@ -369,10 +366,9 @@ export default function RootLayout({
         <CartProvider>
           <ScrollToTop />
           {children}
-          <TawkWidget />
           <WhatsAppWidget />
+          <TawkWidget />
         </CartProvider>
       </body>
     </html>
   )
-}
