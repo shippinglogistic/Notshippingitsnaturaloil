@@ -367,8 +367,9 @@ export default function RootLayout({
           <ScrollToTop />
           {children}
           <WhatsAppWidget />
-          <TawkWidget />
         </CartProvider>
+
+        <TawkWidget />
       </body>
     </html>
   )
