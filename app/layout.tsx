@@ -13,10 +13,10 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 const _playfair = Playfair_Display({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  applicationName: "Rick Simpson Oil for Cancer",
+  applicationName: "Buy RSO and FECO Online",
   title: {
-    default: "Buy Rick Simpson Oil (RSO) & Full Extract Cannabis Oil (FECO) Online",
-    template: "%s | Natural Cannabis Oil",
+    default: "Buy RSO and FECO Online | Rick Simpson Oil & Full Extract Cannabis Oil",
+    template: "%s | Buy RSO and FECO Online",
   },
   description:
     "Buy Rick Simpson Oil (RSO) and Full Extract Cannabis Oil (FECO) online now. Lab-tested full-spectrum cannabis oil with discreet nationwide shipping today.",
@@ -76,20 +76,18 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/images/rso-syringe-professional.png", type: "image/png", sizes: "32x32" },
       { url: "/favicon.ico", sizes: "32x32" },
-      { url: "/images/rso-syringe-professional.png", sizes: "32x32", media: "(prefers-color-scheme: light)" },
-      { url: "/images/rso-syringe-professional.png", sizes: "32x32", media: "(prefers-color-scheme: dark)" },
+      { url: "/favicon.ico", sizes: "16x16" },
     ],
     shortcut: "/favicon.ico",
-    apple: [{ url: "/images/rso-syringe-professional.png", sizes: "180x180", type: "image/png" }],
+    apple: [{ url: "/favicon.ico", sizes: "180x180" }],
   },
   openGraph: {
-    title: "Buy Rick Simpson Oil (RSO) & Full Extract Cannabis Oil (FECO) Online",
+    title: "Buy RSO and FECO Online | Rick Simpson Oil & Full Extract Cannabis Oil",
     description:
       "Buy Rick Simpson Oil (RSO) and Full Extract Cannabis Oil (FECO) online now. Lab-tested full-spectrum cannabis oil with discreet nationwide shipping today.",
     url: "https://www.naturalcannabisoil.shop",
-    siteName: "Natural Cannabis Oil",
+    siteName: "Buy RSO and FECO Online",
     locale: "en_US",
     type: "website",
     images: [
@@ -103,7 +101,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Buy Rick Simpson Oil (RSO) & FECO Online",
+    title: "Buy RSO and FECO Online | Rick Simpson Oil & Full Extract Cannabis Oil",
     description:
       "Buy Rick Simpson Oil (RSO) and Full Extract Cannabis Oil (FECO) online now. Lab-tested full-spectrum cannabis oil with discreet nationwide shipping today.",
     images: ["/og-image.jpg"],
@@ -129,8 +127,8 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://www.naturalcannabisoil.shop/#website",
-  name: "Rick Simpson Oil for Cancer",
-  alternateName: ["RSO for Cancer", "Rick Simpson Oil Shop", "Natural Cannabis Oil Shop"],
+  name: "Buy RSO and FECO Online",
+  alternateName: ["Natural Cannabis Oil Shop", "RSO for Cancer", "Rick Simpson Oil Shop"],
   url: "https://www.naturalcannabisoil.shop",
   description:
     "Premium Rick Simpson Oil (RSO) and Full Extract Cannabis Oil (FECO) for cancer treatment and symptom relief. Lab-tested quality for pain relief, cancer support, anxiety & wellness.",
@@ -153,9 +151,9 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://naturalcannabisoil.shop/#organization",
-  name: "Rick Simpson Oil for Cancer",
-  legalName: "Rick Simpson Oil for Cancer LLC",
-  alternateName: ["RSO for Cancer", "Natural Cannabis Oil Shop"],
+  name: "Buy RSO and FECO Online",
+  legalName: "Natural Cannabis Oil LLC",
+  alternateName: ["Natural Cannabis Oil Shop", "RSO for Cancer", "Rick Simpson Oil Shop"],
   url: "https://naturalcannabisoil.shop",
   logo: {
     "@type": "ImageObject",
@@ -268,7 +266,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "Store",
   "@id": "https://naturalcannabisoil.shop/#store",
-  name: "Rick Simpson Oil for Cancer",
+  name: "Buy RSO and FECO Online",
   image: "https://naturalcannabisoil.shop/og-image.jpg",
   url: "https://naturalcannabisoil.shop",
   telephone: "+1-555-123-4567",
