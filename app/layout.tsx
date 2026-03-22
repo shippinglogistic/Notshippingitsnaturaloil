@@ -4,7 +4,9 @@ import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
 
 import { CartProvider } from "@/lib/cart-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
-import { Widgets } from "@/components/widgets"
+import dynamic from "next/dynamic"
+
+const WhatsAppWidget = dynamic(() => import("@/components/WhatsAppWidget"), { ssr: false })
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -383,7 +385,7 @@ s0.parentNode.insertBefore(s1,s0);
         <CartProvider>
           <ScrollToTop />
           {children}
-          <Widgets />
+          <WhatsAppWidget />
         </CartProvider>
       </body>
     </html>
