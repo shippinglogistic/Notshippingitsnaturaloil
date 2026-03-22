@@ -1,30 +1,30 @@
-'use client'
+"use client"
 
-import { useEffect } from 'react'
+import { useEffect } from "react"
 
 export default function TawkWidget() {
   useEffect(() => {
-    // Ensure Tawk API is initialized
-    window.Tawk_API = window.Tawk_API || {}
-    window.Tawk_LoadStart = new Date()
+    // 1. Prevent duplicate loading
+    if ((window as any).Tawk_API) return;
 
-    // Create and inject the script
-    const script = document.createElement('script')
-    script.async = true
-    script.src = 'https://embed.tawk.to/693f60bd7bdcd2197d981cc4/1jcfp3pac'
-    script.charset = 'UTF-8'
-    script.setAttribute('crossorigin', '*')
+    // 2. Initialize Tawk_API
+    (window as any).Tawk_API = (window as any).Tawk_API || {};
+    (window as any).Tawk_LoadStart = new Date();
 
-    // Append to document body to ensure it persists
-    document.body.appendChild(script)
+    // 3. Inject the script
+    const s1 = document.createElement("script");
+    const s0 = document.getElementsByTagName("script")[0];
 
-    // Cleanup function to prevent duplicate scripts
-    return () => {
-      // Don't remove the script on unmount - it should stay persistent
-      // This prevents the widget from disappearing on navigation
+    s1.async = true;
+    // This URL now contains your correct Property and Widget IDs
+    s1.src = "https://embed.tawk.to/693f60bd7bdcd2197d981cc4/1jcfp3pac";
+    s1.charset = "UTF-8";
+    s1.setAttribute("crossorigin", "*");
+
+    if (s0 && s0.parentNode) {
+      s0.parentNode.insertBefore(s1, s0);
     }
-  }, [])
+  }, []);
 
-  return null
+  return null;
 }
-
