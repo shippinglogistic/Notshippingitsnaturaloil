@@ -4,9 +4,7 @@ import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
 
 import { CartProvider } from "@/lib/cart-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
-import dynamic from "next/dynamic"
-
-const WhatsAppWidget = dynamic(() => import("@/components/WhatsAppWidget"), { ssr: false })
+import { ClientWidgets } from "@/components/ClientWidgets"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -367,25 +365,12 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-
-        {/* Tawk.to chat widget */}
-        <script type="text/javascript">
-          {`var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/693f60bd7bdcd2197d981cc4/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();`}
-        </script>
       </head>
       <body className={`font-sans antialiased`} suppressHydrationWarning>
         <CartProvider>
           <ScrollToTop />
           {children}
-          <WhatsAppWidget />
+          <ClientWidgets />
         </CartProvider>
       </body>
     </html>
