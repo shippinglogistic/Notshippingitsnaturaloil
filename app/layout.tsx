@@ -1,11 +1,10 @@
-import React from "react"
+import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
 
 import { CartProvider } from "@/lib/cart-context"
 import { ScrollToTop } from "@/components/scroll-to-top"
-import WhatsAppWidget from "@/components/WhatsAppWidget"
-import TawkWidget from "@/components/TawkWidget"
+import { Widgets } from "@/components/widgets"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -13,10 +12,10 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 const _playfair = Playfair_Display({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  applicationName: "Buy RSO and FECO Online",
+  applicationName: "Rick Simpson Oil for Cancer",
   title: {
-    default: "Buy RSO and FECO Online | Rick Simpson Oil & Full Extract Cannabis Oil",
-    template: "%s | Buy RSO and FECO Online",
+    default: "Buy Rick Simpson Oil (RSO) & Full Extract Cannabis Oil (FECO) Online",
+    template: "%s | Natural Cannabis Oil",
   },
   description:
     "Buy Rick Simpson Oil (RSO) and Full Extract Cannabis Oil (FECO) online now. Lab-tested full-spectrum cannabis oil with discreet nationwide shipping today.",
@@ -75,16 +74,21 @@ export const metadata: Metadata = {
     canonical: "https://www.naturalcannabisoil.shop",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/images/rso-syringe-professional.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/images/rso-syringe-professional.png", sizes: "32x32", media: "(prefers-color-scheme: light)" },
+      { url: "/images/rso-syringe-professional.png", sizes: "32x32", media: "(prefers-color-scheme: dark)" },
+    ],
     shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    apple: [{ url: "/images/rso-syringe-professional.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "Buy RSO and FECO Online | Rick Simpson Oil & Full Extract Cannabis Oil",
+    title: "Buy Rick Simpson Oil (RSO) & Full Extract Cannabis Oil (FECO) Online",
     description:
       "Buy Rick Simpson Oil (RSO) and Full Extract Cannabis Oil (FECO) online now. Lab-tested full-spectrum cannabis oil with discreet nationwide shipping today.",
     url: "https://www.naturalcannabisoil.shop",
-    siteName: "Buy RSO and FECO Online",
+    siteName: "Natural Cannabis Oil",
     locale: "en_US",
     type: "website",
     images: [
@@ -98,7 +102,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Buy RSO and FECO Online | Rick Simpson Oil & Full Extract Cannabis Oil",
+    title: "Buy Rick Simpson Oil (RSO) & FECO Online",
     description:
       "Buy Rick Simpson Oil (RSO) and Full Extract Cannabis Oil (FECO) online now. Lab-tested full-spectrum cannabis oil with discreet nationwide shipping today.",
     images: ["/og-image.jpg"],
@@ -124,8 +128,8 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://www.naturalcannabisoil.shop/#website",
-  name: "Buy RSO and FECO Online",
-  alternateName: ["Natural Cannabis Oil Shop", "RSO for Cancer", "Rick Simpson Oil Shop"],
+  name: "Rick Simpson Oil for Cancer",
+  alternateName: ["RSO for Cancer", "Rick Simpson Oil Shop", "Natural Cannabis Oil Shop"],
   url: "https://www.naturalcannabisoil.shop",
   description:
     "Premium Rick Simpson Oil (RSO) and Full Extract Cannabis Oil (FECO) for cancer treatment and symptom relief. Lab-tested quality for pain relief, cancer support, anxiety & wellness.",
@@ -148,9 +152,9 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://naturalcannabisoil.shop/#organization",
-  name: "Buy RSO and FECO Online",
-  legalName: "Natural Cannabis Oil LLC",
-  alternateName: ["Natural Cannabis Oil Shop", "RSO for Cancer", "Rick Simpson Oil Shop"],
+  name: "Rick Simpson Oil for Cancer",
+  legalName: "Rick Simpson Oil for Cancer LLC",
+  alternateName: ["RSO for Cancer", "Natural Cannabis Oil Shop"],
   url: "https://naturalcannabisoil.shop",
   logo: {
     "@type": "ImageObject",
@@ -263,7 +267,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "Store",
   "@id": "https://naturalcannabisoil.shop/#store",
-  name: "Buy RSO and FECO Online",
+  name: "Rick Simpson Oil for Cancer",
   image: "https://naturalcannabisoil.shop/og-image.jpg",
   url: "https://naturalcannabisoil.shop",
   telephone: "+1-555-123-4567",
@@ -356,30 +360,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head suppressHydrationWarning>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        />
+      <head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       </head>
       <body className={`font-sans antialiased`} suppressHydrationWarning>
         <CartProvider>
           <ScrollToTop />
           {children}
-          <WhatsAppWidget />
-          <TawkWidget />
+          <Widgets />
         </CartProvider>
       </body>
     </html>
